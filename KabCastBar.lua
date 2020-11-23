@@ -52,6 +52,17 @@ f:SetScript("OnEvent", function(self, event, name, ...)
 		CastingBarFrame:SetScale(1.0)
 		CastingBarFrame.SetPoint = function() end
 
+		ToggleFramerate()
+		FramerateLabel:SetAlpha(0)
+		--FramerateLabel:ClearAllPoints()
+		FramerateText:ClearAllPoints()
+		FramerateText:SetTextColor(0,1,0)
+		FramerateText:SetScale(0.65)
+		--FramerateLabel:SetPoint("RIGHT",nil"CENTER",0,-445)
+		FramerateText:SetPoint("LEFT",PlayerFrame,"RIGHT",-276,64)
+		--FramerateText:SetPoint = function() end
+
+
 		if classcaps == "ROGUE" then
 			ComboPointPlayerFrame:EnableMouse(false)
 			ComboPointPlayerFrame.Combo1:EnableMouse(false)
@@ -59,11 +70,25 @@ f:SetScript("OnEvent", function(self, event, name, ...)
 			ComboPointPlayerFrame.Combo3:EnableMouse(false)
 			ComboPointPlayerFrame.Combo4:EnableMouse(false)
 			ComboPointPlayerFrame.Combo5:EnableMouse(false)
+			ComboPointPlayerFrame.Background:SetAlpha(0)
 			ComboPointPlayerFrame:ClearAllPoints()
 			--RuneFrame:SetParent(UIParent)
-			ComboPointPlayerFrame:SetPoint("CENTER",UIParent,"CENTER",0,-180)
+			ComboPointPlayerFrame:SetPoint("CENTER",UIParent,"CENTER",0,-176)
 			ComboPointPlayerFrame:SetScale(0.90)
 			ComboPointPlayerFrame.SetPoint = function() end
+		end
+		if classcaps == "MONK" then
+			MonkHarmonyBarFrame:EnableMouse(false)
+			MonkStaggerBar:EnableMouse(false)
+			--MonkHarmonyBarFrame.Background:SetAlpha(0)
+			MonkStaggerBar:ClearAllPoints()
+			MonkStaggerBar:SetPoint("CENTER",UIParent,"CENTER",0,-136)
+			MonkStaggerBar:SetScale(1.20)
+			MonkStaggerBar.SetPoint = function() end
+			MonkHarmonyBarFrame:ClearAllPoints()
+			MonkHarmonyBarFrame:SetPoint("CENTER",UIParent,"CENTER",0,-176)
+			MonkHarmonyBarFrame:SetScale(0.90)
+			MonkHarmonyBarFrame.SetPoint = function() end
 		end
 		if classcaps == "DEATHKNIGHT" then
 			RuneFrame:EnableMouse(false)
@@ -75,7 +100,7 @@ f:SetScript("OnEvent", function(self, event, name, ...)
 			RuneFrame.Rune6:EnableMouse(false)
 			RuneFrame:ClearAllPoints()
 			--RuneFrame:SetParent(UIParent)
-			RuneFrame:SetPoint("CENTER",UIParent,"CENTER",6,-178)
+			RuneFrame:SetPoint("CENTER",UIParent,"CENTER",6,-176)
 			RuneFrame:SetScale(0.90)
 			RuneFrame.SetPoint = function() end
 		end
